@@ -20,7 +20,6 @@ class ContactController extends Controller
         return view('create');
     }
     public function details(Contacts $contact){
-        //need to debug as cant see the details page
         //dd($contact);
         return view('details')->with('contact',$contact);
      
@@ -53,39 +52,30 @@ class ContactController extends Controller
 
     }
     
-    public function edit(){
+    public function edit(Contacts $contact){
     
-        return view('edit');
+        return view('edit')->with('contact',$contact);
     
     }
     
- public function update(Contacts $view){
-
-    /* try {
-        $this->validate(request(), [
-            'name' => ['required'],
-            'description' => ['required'],
-       
-        ]);
-    } catch (ValidationException $e) {
-    } */
-
+ public static function update(Contacts $contact){
     $data = request()->all();
+    
 
-   
-    $view->name = $data['name'];
-    $view->phone = $data['phone'];
-    $view->email = $data['email'];
-    $view->save();
+
+    $contact->name = $data['name'];
+    $contact->phone = $data['phone'];
+    $contact->email = $data['email'];
+    $contact->save();
 
     session()->flash('success', 'Contact infomation updated successfully');
 
     return redirect('/');
 
 }
-    public function delete(Contacts $view){
+    public function delete(Contacts $contact){
         
-        $view->delete;
+        $contact->delete;
         return redirect('/');    
     }
 }
