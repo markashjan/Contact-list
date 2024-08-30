@@ -29,14 +29,13 @@ class ContactController extends Controller
     {
         $data = request()->all();
 
-        try {
+    
             $validated = $request->validate([
-                'name' => ['required'],
-                'phone' => ['required'],
-                'email' => ['required']
+                'Contact name' => ['required'],
+                'Contact Phone' => ['required'],
+                'Contact Email' => ['required']
             ]);
-        } catch (ValidationException $e) {
-        }
+         
 
         
 
@@ -61,9 +60,7 @@ class ContactController extends Controller
     
     public static function update(Contacts $contact){
         $data = request()->all();
-    
-
-
+        
         $contact->name = $data['name'];
         $contact->phone = $data['phone'];
         $contact->email = $data['email'];
