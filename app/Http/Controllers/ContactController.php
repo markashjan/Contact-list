@@ -73,9 +73,12 @@ class ContactController extends Controller
     return redirect('/');
 
 }
-    public function delete(Contacts $contact){
+    public function delete($contact){
+        //$contact->dd();
+        Contacts::where('id', $contact)->delete();
+
+        session()->flash('success', 'Contact deleted successfully');
         
-        $contact->delete;
         return redirect('/');    
     }
 }
