@@ -8,7 +8,7 @@
         <div class="col-12 p-3  align-self-center">
             <div class="p-3">
                 <form action="" method="GET">
-                    <input type="text" name="search" placeholder="Search Contact">
+                    <input type="text" name="search" placeholder="Search Contacts">
                     <button type="submit">Search</button>
                 </form>
             </div>        

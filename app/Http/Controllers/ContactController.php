@@ -59,21 +59,21 @@ class ContactController extends Controller
     
     }
     
- public static function update(Contacts $contact){
-    $data = request()->all();
+    public static function update(Contacts $contact){
+        $data = request()->all();
     
 
 
-    $contact->name = $data['name'];
-    $contact->phone = $data['phone'];
-    $contact->email = $data['email'];
-    $contact->save();
+        $contact->name = $data['name'];
+        $contact->phone = $data['phone'];
+        $contact->email = $data['email'];
+        $contact->save();
 
-    session()->flash('success', 'Contact infomation updated successfully');
+        session()->flash('success', 'Contact infomation updated successfully');
 
-    return redirect('/');
+        return redirect('/');
 
-}
+    }
     public function delete($contact){
         //$contact->dd();
         Contacts::where('id', $contact)->delete();
@@ -81,5 +81,11 @@ class ContactController extends Controller
         session()->flash('success', 'Contact deleted successfully');
         
         return redirect('/');    
+    }
+
+    public function search( Request $request){
+        $search = $request->input('search');
+        $results = Contacts::where('id', 'like', "%$search%")->get();    
+    return view('/', ['results' => $results]);
     }
 }

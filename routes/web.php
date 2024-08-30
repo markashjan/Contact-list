@@ -10,3 +10,4 @@ Route::get('details/edit/{contact}', [ContactController::class, 'edit']);
 Route::post('update/{contact}', [ContactController::class, 'update']);
 Route::post('store_data', [ContactController::class, 'store']);
 Route::get('details/delete/{contact}', [ContactController::class, 'delete']);
+Route::get('search',[ContactController::class, 'search']);
