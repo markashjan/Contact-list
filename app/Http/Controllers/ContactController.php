@@ -22,7 +22,7 @@ class ContactController extends Controller
     public function details(Contacts $contact){
         //need to debug as cant see the details page
         //dd($contact);
-        return view('details')->with('Contacts',$contact);
+        return view('details')->with('contact',$contact);
      
     }
     public static function store(Request $request){
