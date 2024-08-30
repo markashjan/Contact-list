@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contacts;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
@@ -24,7 +25,8 @@ class ContactController extends Controller
         return view('details')->with('contact',$contact);
      
     }
-    public static function store(Request $request){
+    public static function store(Request $request):RedirectResponse
+    {
         $data = request()->all();
 
         try {
@@ -36,8 +38,7 @@ class ContactController extends Controller
         } catch (ValidationException $e) {
         }
 
-        return $validated;
-
+        
 
         $Contacts = new Contacts();
         //On the left is the field name in DB and on the right is field name in Form/view
