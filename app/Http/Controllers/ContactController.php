@@ -82,7 +82,8 @@ class ContactController extends Controller
 
     public function search( Request $request){
         $search = $request->input('search');
-        $results = Contacts::where('id', 'like', "%$search%")->get();    
-    return view('/', ['results' => $results]);
+        $results = Contacts::where('name', 'like', "%$search%")->get(); 
+        dd($results); 
+    return view('search', ['results' => $results]);
     }
 }
