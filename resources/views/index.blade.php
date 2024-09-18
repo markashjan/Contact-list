@@ -8,7 +8,7 @@
         <div class="col-12 p-3  align-self-center">
             <div class="col-6 p-2">
             <form action="search" method="GET">
-                    <input type="text" name="search" placeholder="Search Contacts">
+                    <input type="text" name="search" placeholder="Search Contacts" required/>
                     <button type="submit">Search</button>
                     @if (count((array)$results) > 0)
                         <ul>
