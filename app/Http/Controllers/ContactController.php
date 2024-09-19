@@ -27,17 +27,7 @@ class ContactController extends Controller
     }
     public static function store(Request $request):RedirectResponse
     {
-        $data = request()->all();
-
-    
-            $validated = $request->validate([
-                'Contact name' => ['required'],
-                'Contact Phone' => ['required'],
-                'Contact Email' => ['required']
-            ]);
-         
-
-        
+        $data = request()->all();      
 
         $Contacts = new Contacts();
         //On the left is the field name in DB and on the right is field name in Form/view
@@ -46,7 +36,7 @@ class ContactController extends Controller
         $Contacts->email = $data['email'];
         $Contacts->save();
 
-        session()->flash('success', 'Contact created succesfully');
+        session()->flash('success', 'Contact created successfully');
 
         return redirect('/');
 

@@ -10,6 +10,7 @@
             <form action="search" method="GET">
                     <input type="text" name="search" placeholder="Search Contacts" required/>
                     <button type="submit" class="btn btn-primary">Search</button>
+                    <a class="btn btn-primary" href="/" role="button">Clear</a>
                     <div class="col-3 p-2">
                          @if (count((array)$Contacts) > 0)
                         <ul class="list-group">
