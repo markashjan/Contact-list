@@ -23,6 +23,8 @@
     <div class="container">
         <a href="/"><span class="navbar-brand mb-0 h1">Contact</span></a>
         <a href="/create"><span class="btn btn-primary">Create Contacts</span></a>
+        <a class="btn btn-primary" href="/signup" role="button">Sign Up</a>
+        <a class="btn btn-primary" href="/user" role="button">User list</a>
     </div>
 </nav>
 

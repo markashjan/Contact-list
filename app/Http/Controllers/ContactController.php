@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contacts;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Validation\ValidationException;
 
 class ContactController extends Controller
