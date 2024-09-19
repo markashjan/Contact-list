@@ -9,12 +9,12 @@
             <div class="col-6 p-2">
             <form action="search" method="GET">
                     <input type="text" name="search" placeholder="Search Contacts" required/>
-                    <button type="submit">Search</button>
+                    <button type="submit" class="btn btn-primary">Search</button>
                     <div class="col-3 p-2">
                          @if (count((array)$Contacts) > 0)
-                        <ul class="list-group ">
+                        <ul class="list-group">
                             @foreach ($Contacts as $view)
-                            <li class="list-group-item rounded border border-dark"><a href="details/{{$view->id}}">{{$view->name}}</a></li>
+                            <a class="btn rounded border border-dark" href="details/{{$view->id}}">{{$view->name}}</a>
                             @endforeach
                         </ul>
                         @else
